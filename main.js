@@ -30,6 +30,7 @@ function normalizarDia(diaBr) {
 async function mandarMotivacao() {
   const respostaEl = document.getElementById("resposta");
   const nivel = document.getElementById("nivel").value;
+  const chave = localStorage.getItem("openai_api_key");
   const diaBr = new Date().toLocaleDateString("pt-BR", { weekday: "long" });
   const dia = normalizarDia(diaBr);
   const treino = fichas[dia] || "Sem treino definido para hoje.";
