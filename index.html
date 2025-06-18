@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>GPTREINO - Coach de Bolso</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>GPTREINO 🔥</h1>
+    <p id="treinoDoDia"></p>
+
+    <label for="nivel">Nível de motivação:</label>
+    <select id="nivel">
+      <option value="1">1 - Leve</option>
+      <option value="2">2 - Clássica</option>
+      <option value="3">3 - Científica</option>
+      <option value="4">4 - Fúria Controlada</option>
+      <option value="5">5 - MODO BERSERKER</option>
+    </select>
+
+    <button onclick="mandarMotivacao()">Motivar Agora</button>
+    <pre id="resposta" class="motivacao"></pre>
+    <p id="contador" style="margin-top: 10px; font-size: 14px;">
+      🏋️ Motivações geradas: 0 | 💸 Estimativa de custo: $0.000
+    </p>    
+    <div id="gif"></div>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
