@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salvar API Key</title>
+</head>
+<body style="font-family:sans-serif; padding:20px;">
+  <h2>🔐 Salvar sua API Key</h2>
+  <p>Cole sua chave abaixo e clique em salvar:</p>
+  <input type="text" id="key" placeholder="sk-..." style="width:100%;padding:8px;" />
+  <button onclick="salvarKey()" style="margin-top:10px;padding:10px;width:100%;">Salvar</button>
+  <p id="status" style="margin-top:15px;color:green;"></p>
+
+  <script>
+    function salvarKey() {
+      const key = document.getElementById("key").value;
+      if (!key.startsWith("sk-")) {
+        document.getElementById("status").textContent = "❌ Chave inválida.";
+        return;
+      }
+      localStorage.setItem("openai_api_key", key);
+      document.getElementById("status").textContent = "✅ Chave salva com sucesso!";
+    }
+  </script>
+</body>
+</html>
