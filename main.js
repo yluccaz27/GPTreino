@@ -30,10 +30,14 @@ function normalizarDia(diaBr) {
 async function mandarMotivacao() {
   const respostaEl = document.getElementById("resposta");
   const nivel = document.getElementById("nivel").value;
-  const chave = localStorage.getItem("openai_api_key");
   const diaBr = new Date().toLocaleDateString("pt-BR", { weekday: "long" });
   const dia = normalizarDia(diaBr);
   const treino = fichas[dia] || "Sem treino definido para hoje.";
+  const chave = localStorage.getItem("openai_api_key");
+  if (!chave) {
+    respostaEl.textContent = "⚠️ Nenhuma chave API foi encontrada. Use o console para configurar:\nlocalStorage.setItem('openai_api_key', 'sua_key_aqui')";
+    return;
+  }
 
   respostaEl.textContent = "Consultando GPTREINO...";
 
